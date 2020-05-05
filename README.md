@@ -2,7 +2,7 @@
 # Auth API
 
 ## Test API endpoint
-The API is currently available [HERE](https://sz4599v0s2.execute-api.eu-central-1.amazonaws.com/dev/authenticate)
+The API is currently available [HERE](https://sz4599v0s2.execute-api.eu-central-1.amazonaws.com/dev/)
 
 ## Important Notes
 - The only working username: davide@example.com
