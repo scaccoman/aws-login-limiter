@@ -6,7 +6,7 @@ The API is currently available [HERE](https://sz4599v0s2.execute-api.eu-central-
 
 ## Important Notes
 - The only working username: davide@example.com
-- The only woorking password is: Password1
+- The only working password is: Password1
 - The most important endpoint is **Authenticate** which by returning a limited set of stream keys would enable an hipotetical Stream API to provide video streams to a limited set of devices.
 
 ## Configuration
