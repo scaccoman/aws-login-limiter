@@ -16,6 +16,7 @@ provider:
     REDIS_HOST: ${self:custom.env.${opt:stage}.REDIS_HOST}
     REDIS_PORT: ${self:custom.env.${opt:stage}.REDIS_PORT}
     REDIS_PASSWORD: ${self:custom.env.${opt:stage}.REDIS_PASSWORD}
+    SECRET: ${self:custom.env.${opt:stage}.SECRET}
 
 custom:
   defaultStage: dev
@@ -25,11 +26,13 @@ custom:
       REDIS_PORT: ${env:REDIS_PORT_DEV}
       REDIS_PASSWORD: ${env:REDIS_PASSWORD_DEV}
       SLS_BUCKET: ${env:SLS_BUCKET_DEV}
+      SECRET: ${env:SECRET_DEV}
     prod:
       REDIS_HOST: ${env:REDIS_HOST_PROD}
       REDIS_PORT: ${env:REDIS_PORT_PROD}
       REDIS_PASSWORD: ${env:REDIS_PASSWORD_PROD}
       SLS_BUCKET: ${env:SLS_BUCKET_PROD}
+      SECRET: ${env:SECRET_PROD}
 
 plugins:
   - serverless-offline

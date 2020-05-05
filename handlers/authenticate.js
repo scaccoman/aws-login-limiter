@@ -11,13 +11,13 @@ const {
 const { v1 } = require('uuid');
 const jwt = require('jsonwebtoken');
 const redisAsync = require('async-redis');
-const client = redisAsync.createClient(redis);
 
 const validate = require('../libs/schemas/authenticate');
 const responses = require('../libs/responses');
 const keygen = require('../libs/keygen');
 
 module.exports = async event => {
+  const client = redisAsync.createClient(redis);
   try {
     if (event.body || !event.headers) {
       throw new Error('Payload validation error');

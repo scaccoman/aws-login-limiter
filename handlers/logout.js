@@ -5,7 +5,6 @@ const { secret, streamKeySecret, redis } = require('../libs/config')();
 const { v1 } = require('uuid');
 const jwt = require('jsonwebtoken');
 const redisAsync = require("async-redis");
-const client = redisAsync.createClient(redis);
 
 const Cognito = require('../libs/Cognito');
 const cognito = new Cognito();
@@ -13,10 +12,9 @@ const validate = require('../libs/schemas/logout');
 const responses = require('../libs/responses');
 
 module.exports = async event => {
+  const client = redisAsync.createClient(redis);
   try {
-    if (!event.body) event.body = '{}';
-
-    const body = JSON.parse(event.body);
+    const body = JSON.parse(event.body || '{}');
     if (!validate.request(body)) {
       throw new Error(JSON.stringify(validate.request.errors));
     };
