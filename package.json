@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "ajv": "^6.12.0",
+    "ajv": "^6.12.3",
     "async-redis": "^1.1.7",
     "jsonwebtoken": "^8.5.1",
     "redis": "^3.0.2",
